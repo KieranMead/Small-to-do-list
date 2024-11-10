@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
@@ -6,8 +7,6 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-
 
 public class todolist {
 
@@ -78,24 +77,22 @@ public class todolist {
                         String itemName = Eventname.getText();
                         String dateOfCompletion = dateField.getText();
 
-                        try { 
-                              String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-                            File file = new File("todolist_" + timestamp + ".txt");
-                            
+                        try {
+                            // Use a fixed file name
+                            File file = new File("todolist.txt");
 
-                            // Create a new BufferedWriter to write to the new file
-                            BufferedWriter writer = new BufferedWriter(new FileWriter(file));
-
-                            writer.write("item name" + itemName + "date" + dateOfCompletion);
+                            // Create a BufferedWriter to append to the file
+                            BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
+                            // Write a properly formatted string
+                            writer.write("Item Name: " + itemName + ", Date: " + dateOfCompletion);
                             writer.newLine();
                             writer.close();
-
-                        }
-                        catch (IOException ex){
+                        } catch (IOException ex) {
                             ex.printStackTrace();
+                            System.out.println("didnt work");
                         }
 
-
+                        // Reset text fields
                         Eventname.setText("Enter item name here");
                         dateField.setText("Enter date here");
 
@@ -103,6 +100,7 @@ public class todolist {
                         dateField.setForeground(java.awt.Color.GRAY);
                     }
                 });
+                System.out.println("File path: " + new File("todolist.txt").getAbsolutePath());
 
                 mainframe.revalidate();
                 mainframe.repaint();
