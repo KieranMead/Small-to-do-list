@@ -108,6 +108,7 @@ public class todolist {
 
                         // Reset text fields
                         Eventname.setText("Enter item name here");
+                        Eventname2.setText("Enter item name here");
                         dateField.setText("Enter date here");
 
                         Eventname.setForeground(java.awt.Color.GRAY);
