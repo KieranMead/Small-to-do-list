@@ -56,8 +56,8 @@ public class todolist {
 
                 
                 JTextField Eventname2 = new JTextField();
-                Eventname.setText("Enter item name here");
-                Eventname.setForeground(java.awt.Color.GRAY);
+                Eventname2.setText("Enter item name here");
+                Eventname2.setForeground(java.awt.Color.GRAY);
                 Addevent.add(Eventname2);
 
                 Eventname2.addFocusListener(new FocusAdapter() {
@@ -69,8 +69,8 @@ public class todolist {
                 });
 
                 JTextField Eventname3 = new JTextField();
-                Eventname.setText("Enter item name here");
-                Eventname.setForeground(java.awt.Color.GRAY);
+                Eventname3.setText("Enter item name here");
+                Eventname3.setForeground(java.awt.Color.GRAY);
                 Addevent.add(Eventname3);
 
                 Eventname3.addFocusListener(new FocusAdapter() {
@@ -82,8 +82,8 @@ public class todolist {
                 });
 
                 JTextField Eventname4 = new JTextField();
-                Eventname.setText("Enter item name here");
-                Eventname.setForeground(java.awt.Color.GRAY);
+                Eventname4.setText("Enter item name here");
+                Eventname4.setForeground(java.awt.Color.GRAY);
                 Addevent.add(Eventname4);
 
                 Eventname4.addFocusListener(new FocusAdapter() {
@@ -95,8 +95,8 @@ public class todolist {
                 });
 
                 JTextField Eventname5 = new JTextField();
-                Eventname.setText("Enter item name here");
-                Eventname.setForeground(java.awt.Color.GRAY);
+                Eventname5.setText("Enter item name here");
+                Eventname5.setForeground(java.awt.Color.GRAY);
                 Addevent.add(Eventname5);
 
                 Eventname5.addFocusListener(new FocusAdapter() {
