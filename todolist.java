@@ -94,6 +94,19 @@ public class todolist {
                     }
                 });
 
+                JTextField Eventname5 = new JTextField();
+                Eventname.setText("Enter item name here");
+                Eventname.setForeground(java.awt.Color.GRAY);
+                Addevent.add(Eventname5);
+
+                Eventname5.addFocusListener(new FocusAdapter() {
+                    public void focusGained(FocusEvent e) {
+                        if (Eventname5.getText().equals("Enter item name here")) {
+                            Eventname5.setText("");
+                        }
+                    }
+                });
+
                 
 
                 
@@ -119,7 +132,11 @@ public class todolist {
 
                 submitbutton.addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        String itemName = Eventname.getText();
+                        String itemName1 = Eventname.getText();
+                        String itemName2 = Eventname2.getText();
+                        String itemName3 = Eventname3.getText();
+                        String itemName4 = Eventname4.getText();
+                        String itemName5 = Eventname5.getText();
                         String dateOfCompletion = dateField.getText();
 
                         try {
@@ -129,8 +146,19 @@ public class todolist {
                             // Create a BufferedWriter to append to the file
                             BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
                             // Write a properly formatted string
-                            writer.write("Item Name: " + itemName + ", Date: " + dateOfCompletion);
+                            writer.write("Item 1: " + itemName1);
                             writer.newLine();
+                            writer.write("Item 2: " + itemName2);
+                            writer.newLine();
+                            writer.write("Item 3: " + itemName3);
+                            writer.newLine();
+                            writer.write("Item 4: " + itemName4);
+                            writer.newLine();
+                            writer.write("Item 5: " + itemName5);
+                            writer.newLine();
+                            writer.write("Date of Completion: " + dateOfCompletion);
+                            writer.newLine();
+                            writer.newLine();  // Add a blank line for separation between entries
                             writer.close();
                         } catch (IOException ex) {
                             ex.printStackTrace();
@@ -142,6 +170,7 @@ public class todolist {
                         Eventname2.setText("Enter item name here");
                         Eventname3.setText("Enter item name here");
                         Eventname4.setText("Enter item name here");
+                        Eventname5.setText("Enter item name here");
                         dateField.setText("Enter date here");
 
                         Eventname.setForeground(java.awt.Color.GRAY);
