@@ -29,6 +29,7 @@ public class todolist {
         mainpanel.add(addButton);
 
         mainframe.setVisible(true);
+        mainframe.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
         addButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -66,6 +67,21 @@ public class todolist {
                         }
                     }
                 });
+
+                JTextField Eventname3 = new JTextField();
+                Eventname.setText("Enter item name here");
+                Eventname.setForeground(java.awt.Color.GRAY);
+                Addevent.add(Eventname3);
+
+                Eventname3.addFocusListener(new FocusAdapter() {
+                    public void focusGained(FocusEvent e) {
+                        if (Eventname3.getText().equals("Enter item name here")) {
+                            Eventname3.setText("");
+                        }
+                    }
+                });
+
+                
 
                 JLabel DateLabel = new JLabel("Please enter the date of completion (dd-mm-yyyy)");
                 Addevent.add(DateLabel);
@@ -109,6 +125,7 @@ public class todolist {
                         // Reset text fields
                         Eventname.setText("Enter item name here");
                         Eventname2.setText("Enter item name here");
+                        Eventname3.setText("Enter item name here");
                         dateField.setText("Enter date here");
 
                         Eventname.setForeground(java.awt.Color.GRAY);
