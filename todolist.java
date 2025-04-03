@@ -86,13 +86,15 @@ public class todolist {
                 Eventname.setForeground(java.awt.Color.GRAY);
                 Addevent.add(Eventname4);
 
-                Eventname2.addFocusListener(new FocusAdapter() {
+                Eventname4.addFocusListener(new FocusAdapter() {
                     public void focusGained(FocusEvent e) {
                         if (Eventname4.getText().equals("Enter item name here")) {
                             Eventname4.setText("");
                         }
                     }
                 });
+
+                
 
                 
 
